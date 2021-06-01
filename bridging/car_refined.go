@@ -1,17 +1,17 @@
 package bridging
 
+import "fmt"
+
 type RefinedCar struct {
-	Car
+	engine Engine
 }
 
 func NewRefinedCar(engine Engine) RefinedCar {
-	return RefinedCar{Car{Engine: engine}}
+	return RefinedCar{engine}
 }
 
 func (r *RefinedCar) Drive() {
-	r.Engine.Start()
-}
-
-func (r *RefinedCar) GetBrand() string {
-	return ""
+	r.engine.Start()
+	fmt.Println("Drive Refined Car")
+	fmt.Println("-----------------")
 }
